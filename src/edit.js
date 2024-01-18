@@ -67,7 +67,7 @@ const Edit = (props) => {
                 />
             </div>
             {mediaCaption && <div><span>Caption: {mediaCaption}</span></div>}
-            <div class="fa-emphasis-block-text-container">
+            <div className="fa-emphasis-block-text-container">
                 <RichText
                     tagName="div"
                     multiline="p"
@@ -89,8 +89,8 @@ const Edit = (props) => {
                     onChange={onChangeContent}
                 />
             </div>
-            <div class="fa-emphasis-block-button-container">
-                <button class="fa-media-emphasis-block-btn wp-block-button__link wp-element-button">
+            <div className="fa-emphasis-block-button-container">
+                <button className="fa-media-emphasis-block-btn wp-block-button__link wp-element-button">
                     {buttonText ? buttonText + " →" : "Read More →"}
                 </button>
             </div>

@@ -12,13 +12,13 @@ const Save = (props) => {
     const blockProps = useBlockProps.save();
     return (
         <div {...blockProps} className="fa-media-emphasis-block">
-            <div class="fa-emphasis-block-media-content">
+            <div className="fa-emphasis-block-media-content">
                 {mediaURL && (
                     <div class="fa-media-emphasis-image-container" style={{ backgroundImage: `url(${mediaURL})` }}>
-                        {mediaCaption && <span class="inner-caption-span">{mediaCaption}</span>}
+                        {mediaCaption && <span className="inner-caption-span">{mediaCaption}</span>}
                     </div>
                 )}
-                <div class="fa-emphasis-block-text-container">
+                <div className="fa-emphasis-block-text-container">
                     <RichText.Content
                         tagName="h2"
                         value={title}
@@ -29,8 +29,8 @@ const Save = (props) => {
                     />
                 </div>
             </div>
-            <div class="fa-emphasis-block-button-container">
-                <a href={`/${buttonURL}`}><button class="fa-media-emphasis-block-btn wp-block-button__link wp-element-button">
+            <div className="fa-emphasis-block-button-container">
+                <a href={`/${buttonURL}`}><button className="fa-media-emphasis-block-btn wp-block-button__link wp-element-button">
                     {buttonText ? buttonText + " →" : "Read More →"}
                 </button></a>
             </div>
