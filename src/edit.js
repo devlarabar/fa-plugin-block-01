@@ -46,22 +46,8 @@ const Edit = (props) => {
                     allowedTypes="image"
                     value={mediaID}
                     render={({ open }) => (
-                        <Button
-                            className={mediaID ? 'image-button' : 'button button-large'}
-                            onClick={open}
-                        >
-                            {!mediaID ? (__(
-                                'Upload Image',
-                                'femart-custom-block-01'
-                            )) : (
-                                <img
-                                    src={mediaURL}
-                                    alt={__(
-                                        'Upload Image',
-                                        'femart-custom-block-01'
-                                    )}
-                                />
-                            )}
+                        <Button className={mediaID ? 'image-button' : 'button button-large'} onClick={open}>
+                            {!mediaID ? __('Upload Image', 'femart-custom-block-01') : <img src={mediaURL} alt={__('Upload Image', 'femart-custom-block-01')} />}
                         </Button>
                     )}
                 />
