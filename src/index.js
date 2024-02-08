@@ -15,7 +15,8 @@ registerBlockType(metadata.name, {
         mediaURL: { type: "string" },
         mediaCaption: { type: "string" },
         buttonText: { type: "string" },
-        buttonURL: { type: "string" }
+        buttonURL: { type: "string" },
+        isInternalLink: { type: "boolean" }
     },
     edit: Edit,
     save: Save

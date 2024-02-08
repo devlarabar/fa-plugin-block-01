@@ -3,12 +3,12 @@
  */
 import { __ } from '@wordpress/i18n';
 import { RichText, MediaUpload, useBlockProps } from '@wordpress/block-editor';
-import { Button, PanelBody, TextControl } from '@wordpress/components';
+import { Button, PanelBody, TextControl, ToggleControl } from '@wordpress/components';
 import { InspectorControls } from '@wordpress/block-editor';
 
 const Edit = (props) => {
     const {
-        attributes: { title, mediaID, mediaURL, mediaCaption, buttonText, buttonURL, content },
+        attributes: { title, mediaID, mediaURL, mediaCaption, buttonText, buttonURL, content, isInternalLink },
         setAttributes,
     } = props;
 
@@ -83,7 +83,8 @@ const Edit = (props) => {
             <InspectorControls>
                 <PanelBody title="Button">
                     <TextControl
-                        label="Link - Page Slug"
+                        label="Link"
+                        help={isInternalLink ? "Page Slug" : "FULL URL"}
                         value={buttonURL}
                         onChange={onChangeButtonURL}
                     />
@@ -91,6 +92,18 @@ const Edit = (props) => {
                         label="Text"
                         value={buttonText}
                         onChange={onChangeButtonText}
+                    />
+                    <ToggleControl
+                        label="Internal Link"
+                        help={
+                            isInternalLink
+                                ? 'This is an internal link.'
+                                : 'This links outside of FemArt.'
+                        }
+                        checked={isInternalLink}
+                        onChange={(newValue) => {
+                            setAttributes({ isInternalLink: newValue });
+                        }}
                     />
                 </PanelBody>
             </InspectorControls>

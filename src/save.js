@@ -6,7 +6,7 @@ import { RichText, useBlockProps } from '@wordpress/block-editor';
 
 const Save = (props) => {
     const {
-        attributes: { title, mediaCaption, mediaURL, buttonText, buttonURL, content },
+        attributes: { title, mediaCaption, mediaURL, buttonText, buttonURL, content, isInternalLink },
     } = props;
 
     const blockProps = useBlockProps.save();
@@ -30,9 +30,11 @@ const Save = (props) => {
                 </div>
             </div>
             <div className="fa-emphasis-block-button-container">
-                <a href={`/${buttonURL}`}><button className="fa-media-emphasis-block-btn wp-block-button__link wp-element-button">
-                    {buttonText ? buttonText + " →" : "Read More →"}
-                </button></a>
+                <a href={isInternalLink ? `/${buttonURL}` : buttonURL} target={isInternalLink ? "_self" : "_blank"}>
+                    <button className="fa-media-emphasis-block-btn wp-block-button__link wp-element-button">
+                        {buttonText ? buttonText + " →" : "Read More →"}
+                    </button>
+                </a>
             </div>
         </div>
     );
