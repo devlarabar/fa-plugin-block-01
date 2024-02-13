@@ -9,9 +9,11 @@ const Save = (props) => {
         attributes: { title, mediaCaption, mediaURL, buttonText, buttonURL, content, isInternalLink },
     } = props;
 
-    const blockProps = useBlockProps.save();
+    const blockProps = useBlockProps.save({
+        className: "fa-media-emphasis-block"
+    });
     return (
-        <div {...blockProps} className="fa-media-emphasis-block">
+        <div {...blockProps}>
             <div className="fa-emphasis-block-media-content">
                 {mediaURL && (
                     <div class="fa-media-emphasis-image-container" style={{ backgroundImage: `url(${mediaURL})` }}>
@@ -30,7 +32,7 @@ const Save = (props) => {
                 </div>
             </div>
             <div className="fa-emphasis-block-button-container">
-                <a href={isInternalLink ? `/${buttonURL}` : buttonURL} target={isInternalLink ? "_self" : "_blank"}>
+                <a href={isInternalLink ? `/${buttonURL}` : buttonURL} target={isInternalLink ? "_self" : "_blank"} rel="noopener">
                     <button className="fa-media-emphasis-block-btn wp-block-button__link wp-element-button">
                         {buttonText ? buttonText + " →" : "Read More →"}
                     </button>
