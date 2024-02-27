@@ -85,3 +85,7 @@
     border-radius: var(--border-radius-sm);
     color: #000000;
 }
+
+.is-layout-flex:has(.fa-media-emphasis-block)>* {
+    min-width: 290px;
+}
