@@ -73,6 +73,12 @@
     height: 100%;
 }
 
+.fa-media-emphasis-image-edit {
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+}
+
 .inner-caption-span {
     position: absolute;
     bottom: 10px;

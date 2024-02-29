@@ -8,7 +8,16 @@ import { InspectorControls } from '@wordpress/block-editor';
 
 const Edit = (props) => {
     const {
-        attributes: { title, mediaID, mediaURL, mediaCaption, buttonText, buttonURL, content, isInternalLink },
+        attributes: {
+            title,
+            mediaID,
+            mediaURL,
+            mediaCaption,
+            buttonText,
+            buttonURL,
+            content,
+            isInternalLink
+        },
         setAttributes,
     } = props;
 
@@ -40,14 +49,14 @@ const Edit = (props) => {
 
     return (
         <div {...blockProps} className="fa-media-emphasis-block">
-            <div className="fa-media-emphasis-image">
+            <div className="fa-media-emphasis-image fa-media-emphasis-image-edit" style={{ backgroundImage: `url(${mediaURL})` }}>
                 <MediaUpload
                     onSelect={onSelectImage}
                     allowedTypes="image"
                     value={mediaID}
                     render={({ open }) => (
                         <Button className={mediaID ? 'image-button' : 'button button-large'} onClick={open}>
-                            {!mediaID ? __('Upload Image', 'femart-custom-block-01') : <img src={mediaURL} alt={__('Upload Image', 'femart-custom-block-01')} />}
+                            {!mediaID && __('Upload Image', 'femart-custom-block-01')}
                         </Button>
                     )}
                 />
