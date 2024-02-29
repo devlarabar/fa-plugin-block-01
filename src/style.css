@@ -2,6 +2,14 @@
     height: 100%;
 }
 
+.fa-emphasis-block-media-content a {
+    color: var(--primary);
+}
+
+.fa-emphasis-block-media-content a:hover {
+    color: var(--accent2);
+}
+
 .fa-media-emphasis-block {
     background-color: var(--accent1);
     display: flex;
